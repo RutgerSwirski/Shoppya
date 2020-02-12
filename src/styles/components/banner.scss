@@ -1,0 +1,27 @@
+.banner {
+    background-image: url('../../images/blob-shape.svg'), url('../../images/blob-shape-2.svg'), url('../../images/blob-shape-3.svg');
+    background-repeat: no-repeat;
+    background-size: auto 130%;
+    background-position: center;
+}
+
+.banner-content {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.banner-content-title {
+    font-size: 90px;
+    font-weight: 700;
+}
+
+.banner-content-subtitle {
+    font-size: 24px;
+    padding: 0 !important;
+    max-width: 90%;
+    font-weight: 300;
+}

@@ -1,0 +1,15 @@
+.sign-up-container {
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up {
+    height: 90%;
+    width: 35%;
+    @media only screen and (max-width: 800px) {
+        height: 70%;
+        width: 80%
+    }
+}

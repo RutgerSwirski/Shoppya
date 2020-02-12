@@ -1,0 +1,105 @@
+.navbar {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    @media only screen and (min-width: 800px) {
+        height: 60px;
+    }
+}
+
+.navbar-toggle {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    font-size: 25px;
+    @media only screen and (min-width: 800px) {
+        display: none;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.navbar-section-container {
+    padding: 0 !important;
+    display: none;
+    @media only screen and (min-width: 800px) {
+        width: 100%;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.active {
+    display: block;
+}
+
+.navbar-left {
+    @media only screen and (min-width: 800px) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.navbar-right {
+    border-top: 1px solid rgba(0, 0, 0, 0.3 );
+    margin: 10px 0;
+    padding: 15px 0;
+    @media only screen and (min-width: 800px) {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.navbar-title {
+    padding: 10px !important;
+    margin: 10px 0 !important;
+    font-size: 22px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    color: black !important;
+    text-decoration: none !important;
+    &:hover {
+        cursor: pointer;
+    }
+    @media only screen and (min-width: 800px) {
+        margin: 0 10px !important;
+        padding: 0 !important;
+    }
+}
+
+.navbar-items-container {
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    @media only screen and (min-width: 800px) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.navbar-item {
+    padding: 10px 15px;
+    margin: 10px 0;
+    font-weight: 300;
+    text-decoration: none !important;
+    color: black !important;
+    &:hover {
+        background-color: rgb(245, 245, 245);
+        cursor: pointer;
+    }
+    @media only screen and (min-width: 800px) {
+        margin: 0 !important;
+        padding: 15px;
+    }
+}

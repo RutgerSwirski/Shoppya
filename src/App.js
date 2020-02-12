@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+// eslint-disable-next-line
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { autoLogin } from './useful-things/fetches'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from './pages/Home'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import Products from './pages/Products'
+import Cart from './pages/Cart'
+
+import Navbar from './components/Navbar'
+
+
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      currentUser: {}
+    }
+  }
+
+  componentDidMount() {
+    const token = localStorage.getItem('token')
+    if(token) {
+      autoLogin(token)
+      .then((response) => {
+        this.setState({
+          currentUser: response.autoLogin
+        })
+      })
+    }
+  }
+  
+  render() {
+    // const PrivateRoute = ({component: Component, ...rest}) => (
+    //   <Route {...rest} render={(props) => ( localStorage.getItem('token') ? <Component {...props} user={this.state.currentUser} /> : <Redirect to='/login' /> )} />
+    // )
+
+    return(
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={ Home } />
+          <Route path="/login" component={ Login } />
+          <Route path="/signup" component={ SignUp } />
+          <Route path="/products" component={ Products } />
+          <Route path="/cart" component={ Cart } />
+          {/* <PrivateRoute path="/landing" component={ Landing } /> */}
+        </Switch>
+      </BrowserRouter>
+    )
+  }
 }
 
-export default App;
+export default App
